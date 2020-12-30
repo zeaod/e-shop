@@ -96,12 +96,12 @@
 													<span class="custom_dropdown_placeholder clc">หมวดหมู่ทั้งหมด</span>
 													<i class="fas fa-chevron-down"></i>
 													<ul class="custom_list clc">
-														<li><a class="clc" href="#">หมวดหมู่ทั้งหมด</a></li> 
-														@isset($categories)
+														<li><a class="clc" href="#">หมวดหมู่ทั้งหมด</a></li>
+														{{-- @isset($categories) --}}
 															@foreach ($categories as $item)
 																<li><a class="clc" href="#">{{$item->name}}</a></li>
 															@endforeach 
-														@endisset 
+														{{-- @endisset  --}}
 													</ul>
 												</div>
 											</div>
@@ -111,7 +111,7 @@
 								</div>
 							</div>
 						</div>
-     
+	
 
 						<div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
 							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
@@ -158,7 +158,7 @@
 	
 								<div class="main_nav_menu ml-auto">
 									<ul class="standard_dropdown main_nav_dropdown">
-										<li><a href="/">หน้าหลัก<i class="fas fa-chevron-down"></i></a></li> 
+										<li><a href="/">หน้าหลัก<i class="fas fa-chevron-down"></i></a></li>
 										{{-- <li class="hassubs">
 											<a href="#">Super Deals<i class="fas fa-chevron-down"></i></a>
 											<ul>

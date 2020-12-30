@@ -4,6 +4,7 @@
 <link rel="stylesheet" type="text/css" href="{{asset('app/plugins/jquery-ui-1.12.1.custom/jquery-ui.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/shop_styles.css')}}">
 <link rel="stylesheet" type="text/css" href="{{asset('app/styles/shop_responsive.css')}}">
+ 
 @endsection
 
 @section('content')
@@ -100,19 +101,21 @@
 							<!-- Product Item แบบธรรมดา -->
 							@isset($products)
 							@foreach ($products as $item)
-							<div class="product_item">
-								<div class="product_border"></div>
-								<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{$item->image}}" alt=""></div>
-								<div class="product_content">
-									<div class="product_price">${{$item->ragular_price}}</div>
-									<div class="product_name"><div><a href="{{url('/product')}}/{{encrypt($item->id)}}" tabindex="0">{{$item->name}}</a></div></div>
-								</div>
-								<div class="product_fav"><i class="fas fa-heart"></i></div>
-								<ul class="product_marks">
-									<li class="product_mark product_discount">{{$item->discount_price}}%</li>
-									<li class="product_mark product_new">new</li>
-								</ul>
-							</div>
+								<a href="{{url('/product')}}/{{encrypt($item->id)}}" tabindex="0">
+									<div class="product_item">
+										<div class="product_border"></div>
+										<div class="product_image d-flex flex-column align-items-center justify-content-center"><img src="{{$item->image}}" alt=""></div>
+										<div class="product_content">
+											<div class="product_price">${{$item->ragular_price}}</div>
+											<div class="product_name"><div><a href="{{url('/product')}}/{{encrypt($item->id)}}" tabindex="0">{{$item->name}}</a></div></div>
+										</div>
+										{{-- <div class="product_fav"><i class="fas fa-heart"></i></div> --}}
+										<ul class="product_marks">
+											<li class="product_mark product_discount">{{$item->discount_price}}%</li>
+											<li class="product_mark product_new">new</li>
+										</ul>
+									</div>
+								</a>
 							@endforeach	
 							@endisset
 							@isset($message)
@@ -185,4 +188,7 @@
 <script src="{{asset('app/plugins/jquery-ui-1.12.1.custom/jquery-ui.js')}}"></script>
 <script src="{{asset('app/plugins/parallax-js-master/parallax.min.js')}}"></script> 
 <script src="{{asset('app/js/shop_custom.js')}}"></script>
+ 
+
+
 @endsection

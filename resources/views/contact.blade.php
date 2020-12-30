@@ -34,7 +34,7 @@
 
 			<hr>
 			<li>check register</li>
-			
+			<li>- wishlist   auth->check</li>
 
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">

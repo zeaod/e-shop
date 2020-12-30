@@ -4,28 +4,29 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-use App\category;
 
-class Header extends Component
+use App\Product;
+use App\category;
+use App\brand;
+
+
+class header extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
-     */ 
-
-    // public $categories;
-
-    public function categories(){
-        $categories = category::all();
-        return $categories;
-    }
-
+     */
+ 
 
     public function __construct()
     { 
+        //
     }
  
+ 
+
+
     /**
      * Get the view / contents that represent the component.
      *
@@ -33,6 +34,7 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.header');
+        $cate = category::all(); 
+        return view('components.header') ->with('categories',$cate);   
     }
 }

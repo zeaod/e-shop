@@ -45,7 +45,7 @@ class CartController extends Controller
         $id = request('id');
         $name = request('name');
         $price = request('price');
-        $qty = request('qty');
+        $quantity = request('qty');
 
         $customAttributes = [
             'image' =>  request('image')
@@ -62,13 +62,13 @@ class CartController extends Controller
             ]
         ];
  
-        $item = \Cart::session($userId)->add($id, $name, $price, $qty, $customAttributes);
+        $item = \Cart::session($userId)->add($id, $name, $price, $quantity, $customAttributes);
 
-return response(array(
-    'success' => true,
-    'data' => $item,
-    'message' => "item added."
-),201,[]);
+        return response(array(
+            'success' => true,
+            'data' => $item,
+            'message' => "item added."
+        ),201,[]);
     }
 
     public function addCondition()
